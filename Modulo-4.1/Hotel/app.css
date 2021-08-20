@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  margin: 50px;
+  border: 1px solid black;
+  width: max-content;
+}
+form {
+  font-size: 20px;
+  line-height: 35px;
+}
+button {
+  background-color: cornflowerblue;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+    <title>Modulo 4 extra Hotel</title>
+  </head>
+  <body>
+    <h1>Reserva en nuestro hotel</h1>
+    <form action="">
+      <label for="room">Elige tipo de habitación</label>
+      <select name="type" id="typeRoom">
+        <option value="standard">Standard</option>
+        <option value="junior-suite">Junior Suite</option>
+        <option value="suite">Suite</option>
+      </select>
+      <br />
+      <label for="spa">¿Utilizará el Spa?</label>
+      <input type="checkbox" name="spa" id="spa1" />Si
+      <input type="checkbox" name="spa" id="spa2" />No
+      <br />
+      <label for="ocupation">Elige ocupación de la habitación</label>
+      <select name="beds" id="beds">
+        <option value="individual">Individual</option>
+        <option value="doble">Doble</option>
+        <option value="triple">Triple</option>
+      </select>
+      <br />
+      <label for="nights">¿Cuántas noches estará?</label>
+      <input type="number" name="night" id="night" />
+      <br />
+    </form>
+    <button class="btn">Calcular</button>
+    <p></p>
+    <script src="app.js"></script>
+  </body>
+</html>
