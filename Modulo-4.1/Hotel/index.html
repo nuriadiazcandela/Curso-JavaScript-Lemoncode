@@ -12,14 +12,14 @@
     <form action="">
       <label for="room">Elige tipo de habitación</label>
       <select name="type" id="typeRoom">
-        <option value="standard">Standard</option>
-        <option value="junior-suite">Junior Suite</option>
-        <option value="suite">Suite</option>
+        <option value="standard" id="standard">Standard</option>
+        <option value="junior-suite" id="junior">Junior Suite</option>
+        <option value="suite" id="suite">Suite</option>
       </select>
       <br />
       <label for="spa">¿Utilizará el Spa?</label>
-      <input type="checkbox" name="spa" id="spa1" />Si
-      <input type="checkbox" name="spa" id="spa2" />No
+      <input type="checkbox" name="spa" id="spaSi" value="1" />Si
+      <input type="checkbox" name="spa" id="spaNo" value="2" />No
       <br />
       <label for="ocupation">Elige ocupación de la habitación</label>
       <select name="beds" id="beds">

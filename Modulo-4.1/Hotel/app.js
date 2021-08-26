@@ -29,3 +29,29 @@ function handleButton() {
 }
 
 total.addEventListener('click', handleButton);
+
+const selectElement = document.getElementById('typeRoom');
+const checkedElement = document.getElementById('spaSi');
+console.log(checkedElement);
+
+selectElement.addEventListener('change', (event) => {
+  selectRoom = `${event.target.value}`;
+  console.log(selectRoom);
+  let priceRoom = [];
+  console.log(priceRoom);
+  if (selectRoom == 'standard') {
+    priceRoom = 100;
+  } else if (selectRoom == 'junior-suite') {
+    priceRoom = 150;
+  } else {
+    priceRoom = 200;
+  }
+  console.log(priceRoom);
+});
+
+checkedElement.addEventListener('click', function () {
+  if (checkedElement.checked) {
+    priceRoom = 20;
+  }
+  console.log(priceRoom);
+});
