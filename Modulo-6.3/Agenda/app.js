@@ -71,24 +71,18 @@ var findFreeTimeSlot = () => {
   var i = 0;
   var freeTimeSlot;
   var foundTimeSlot = false;
-  //Initialize an array to track availability for all members
+
   var availabilityTracker = new Array(myTeam.length).fill(false);
-  //Initialize another array to true: what the availabilityTracker should look like when a free timeslot is found
   var timeSlotFreeForEveryone = new Array(myTeam.length).fill(true);
 
   do {
-    //Main loop (i) iterates thorugh every timeslot in WORK_HOURS until it ends or finds a free timeslot for all
     for (var j = 0; j < myTeam.length; j++) {
-      //Inner loop (j) goes through all members of the team and checks the availability of current timeslot
       availabilityTracker[j] = myTeam[j].availability[i] ? true : false;
     }
-    //Check if the current timeslot is available for all members
     if (availabilityTracker.toString() === timeSlotFreeForEveryone.toString()) {
-      //Get the current timeslot and end the loop
       freeTimeSlot = WORK_HOURS[i];
       foundTimeSlot = true;
     } else {
-      //Reset the tracker
       availabilityTracker.fill(false);
     }
     i++;
