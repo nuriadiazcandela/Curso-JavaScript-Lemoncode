@@ -72,6 +72,4 @@ function handleButtonClickEqual() {
 
 buttonIgual.addEventListener('click', handleButtonClickEqual);
 
-// *** El resultado sale correcto, solo si se le vuelve a dar al botón de suma, resta, multiplicación o división antes del "igual" *** //
-
-// EJERCICIO 2  Reservas en un Hotel
+// *** El resultado sale correcto, solo si se le vuelve a dar al botón de suma, resta, multiplicación o división antes del "igual" /// A MEJORAR!!! *** //
