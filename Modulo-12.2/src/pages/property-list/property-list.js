@@ -1,10 +1,10 @@
 import {
   getPropertyList,
-  getSaleTypeList,
-  getProvinceList,
+  getSalesTypeList,
+  getProvincesList,
 } from './property-list.api';
 import {
-  mapPropertyListApiToVm,
+  mapPropertyListFromApiToViewModel,
   mapFilterToQueryParams,
 } from './property-list.mappers';
 import {
@@ -20,10 +20,10 @@ import {
 } from './property-list.constants';
 import { onUpdateField, onSubmitForm } from '../../common/helpers';
 
-Promise.all([getPropertyList(), getSaleTypeList(), getProvinceList()]).then(
-  ([propertyList, saleTypeList, provinceList]) => {
+Promise.all([getPropertyList(), getSalesTypeList(), getProvincesList()]).then(
+  ([propertyList, salesTypeList, provinceList]) => {
     loadPropertyList(propertyList);
-    setOptions(saleTypeList, 'select-sale-type', '¿Qué venta?');
+    setOptions(salesTypeList, 'select-sale-type', '¿Qué venta?');
     setOptions(provinceList, 'select-province', '¿Dónde?');
     setOptions(roomOptions, 'select-room', '¿Habitaciones?');
     setOptions(bathroomOptions, 'select-bathroom', '¿Cuartos de baño?');
@@ -31,15 +31,17 @@ Promise.all([getPropertyList(), getSaleTypeList(), getProvinceList()]).then(
     setOptions(maxPriceOptions, 'select-max-price', 'Max (EUR)');
   }
 );
+
 const loadPropertyList = (propertyList) => {
-  const vmPropertyList = mapPropertyListApiToVm(propertyList);
-  addPropertyRows(vmPropertyList);
+  const viewModelPropertyList = mapPropertyListFromApiToViewModel(propertyList);
+  addPropertyRows(viewModelPropertyList);
 };
+
 let filter = {
   saleTypeId: '',
   provinceId: '',
   minRooms: '',
-  minBathrooms: '',
+  minBathRooms: '',
   minPrice: '',
   maxPrice: '',
 };
@@ -59,6 +61,7 @@ onUpdateField('select-province', (event) => {
     provinceId: value,
   };
 });
+
 onUpdateField('select-room', (event) => {
   const value = event.target.value;
   filter = {
@@ -71,13 +74,16 @@ onUpdateField('select-bathroom', (event) => {
   const value = event.target.value;
   filter = {
     ...filter,
-    minBathrooms: value,
+    minBathRooms: value,
   };
 });
 
 onUpdateField('select-min-price', (event) => {
   const value = event.target.value;
-  filter = { ...filter, minPrice: value };
+  filter = {
+    ...filter,
+    minPrice: value,
+  };
 });
 
 onUpdateField('select-max-price', (event) => {
@@ -94,4 +100,5 @@ onSubmitForm('search-button', () => {
   getPropertyList(queryParams).then((propertyList) => {
     loadPropertyList(propertyList);
   });
+  console.log({ filter });
 });
