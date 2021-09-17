@@ -1,0 +1,16 @@
+# Bootcamp JavaScript Continuo * Lemoncode *
+- Módulo 0 - Seminario Previo
+- Módulo 1 - Introducción
+- Módulo 2 - Variables y tipos de datos
+- Módulo 3 - Operadores y flujos de control
+- Módulo 4 - Funciones y eventos
+- Módulo 5 - Arrays y bucles
+- Módulo 6 - Algoritmos I, Algoritmos II, Algoritmos II
+- Módulo 7 - Expresiones regulares
+- Módulo 8 - Trabajando con imports
+- Módulo 9 - LLamadas asíncronas
+- Módulo 10 - Conceptos avanzados ES6
+- Módulo 11 - Clases y this
+- Módulo 12 - Casos prácticos
+  - 12.1 - Banca Online
+  - 12.2 - Portal inmobiliario
