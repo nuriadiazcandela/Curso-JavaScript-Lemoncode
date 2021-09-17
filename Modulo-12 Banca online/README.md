@@ -1,8 +1,3 @@
-# 00-start-lab-session
+## Módulo 12 - Banca online
 
-In this project we are implemented from `01-login` to `03-account` examples.
-
-## Next steps
-
-- Implement `movements` page.
-- Implement `transfer` page.
+Vamos a simular un portal de banca online, donde mostraremos un listado de movimientos de cuenta, así como un formulario de transferencia bancaria.
